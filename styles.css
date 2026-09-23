@@ -122,7 +122,7 @@ article {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 18px;
 }
 
@@ -191,6 +191,125 @@ footer {
 footer {
   margin-top: 36px;
   text-align: center;
+}
+
+
+/* The landing page's three steps: numbered, unboxed, so the cards below
+   remain the only thing on the page asking to be clicked. */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 46px;
+}
+
+.step h2 {
+  margin: 0 0 0.35em;
+  font-size: 1.15rem;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.97rem;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin: 0 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 26px;
+  margin-top: 6px;
+}
+
+.feature h3 {
+  margin: 0 0 0.35em;
+  font-size: 1.05rem;
+  letter-spacing: -0.015em;
+}
+
+.feature p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.97rem;
+}
+
+.store-note {
+  margin: 26px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+section + section,
+section + article {
+  margin-top: 28px;
+}
+
+/* Prices. The founders plan is marked because it is the one that goes away. */
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.plan {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.plan.featured {
+  border-color: var(--accent);
+  background: rgba(43, 183, 160, 0.08);
+}
+
+.plan p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.plan-name {
+  color: var(--accent) !important;
+  font-size: 0.8rem !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.plan-price {
+  margin: 8px 0 10px !important;
+  color: var(--text) !important;
+  font-size: 1.6rem !important;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.plan-price span {
+  margin-left: 6px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+article h3 {
+  margin: 1.5em 0 0.3em;
+  font-size: 1.02rem;
 }
 
 @media (max-width: 620px) {
