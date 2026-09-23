@@ -328,3 +328,47 @@ article h3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* Screenshots. Three abreast on a desktop, a swipeable row on a phone: a
+   stack of full-height phone pictures pushes everything else off the page. */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 34px;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.gallery figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 620px) {
+  .gallery {
+    grid-auto-columns: 74%;
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    margin-right: -18px;
+    overflow-x: auto;
+    padding-right: 18px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .gallery figure {
+    scroll-snap-align: start;
+  }
+}
