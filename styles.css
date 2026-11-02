@@ -372,3 +372,185 @@ article h3 {
     scroll-snap-align: start;
   }
 }
+
+/* The Schengen calculator: the trips, then the answer under them. Side by
+   side, a column this narrow cut the dates short. */
+.calc {
+  display: grid;
+  gap: 18px;
+}
+
+.calc article + article {
+  margin-top: 0;
+}
+
+.trip-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 12px;
+}
+
+.trip-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 36px;
+  gap: 10px;
+  align-items: end;
+  max-width: 520px;
+}
+
+.trip-row label,
+.check-date {
+  display: grid;
+  gap: 4px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.check-date {
+  max-width: 244px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.check-date span {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* iOS gives a date field a width of its own until its native look is
+   turned off, and two of them then overlap in a phone-width row. */
+input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+}
+
+input[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+}
+
+.trip-remove {
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.trip-remove:hover {
+  background: var(--border);
+}
+
+.button-quiet {
+  padding: 8px 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.calc-empty {
+  margin: 0;
+  color: var(--muted);
+}
+
+.calc-figure p {
+  margin: 0;
+}
+
+.calc-number {
+  font-size: clamp(2.6rem, 7vw, 3.6rem);
+  font-weight: 760;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.calc-caption {
+  margin-top: 6px !important;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.calc-left {
+  margin-top: 14px !important;
+  color: var(--accent);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.calc-figure.over .calc-number,
+.calc-figure.over .calc-left,
+.calc-warning {
+  color: #c2410c;
+}
+
+/* The 180 days as six rows of thirty, oldest first. */
+.window-strip {
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  gap: 3px;
+  max-width: 520px;
+  margin: 22px 0 8px;
+}
+
+.cell {
+  display: inline-block;
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: var(--border);
+}
+
+.cell.used {
+  background: var(--accent);
+}
+
+.cell.today {
+  outline: 2px solid var(--text);
+  outline-offset: 0;
+}
+
+.strip-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.strip-legend .cell {
+  width: 10px;
+}
+
+.strip-legend .cell + * {
+  margin-right: 10px;
+}
+
+@media (max-width: 720px) {
+  .trip-row {
+    grid-template-columns: 1fr 1fr 32px;
+    gap: 8px;
+  }
+}
+
+/* The app's screenshots under the calculator, below the button that sells it. */
+.app-shots {
+  margin: 30px 0 0;
+}

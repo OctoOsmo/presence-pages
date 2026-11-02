@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schengen 90/180 Calculator — how many days you have left</title>
+  <meta name="description" content="Free Schengen calculator: enter your trips and see how many of your 90 days in 180 are used, how long you can stay, and when you can enter again. Works in your browser; nothing is sent anywhere.">
+  <meta name="apple-itunes-app" content="app-id=6813907705">
+  <link rel="canonical" href="https://octoosmo.github.io/presence-pages/schengen-calculator/">
+  <link rel="alternate" hreflang="en" href="https://octoosmo.github.io/presence-pages/schengen-calculator/">
+  <link rel="alternate" hreflang="ru" href="https://octoosmo.github.io/presence-pages/ru/kalkulyator-shengena/">
+  <link rel="alternate" hreflang="x-default" href="https://octoosmo.github.io/presence-pages/schengen-calculator/">
+  <meta property="og:title" content="Schengen 90/180 Calculator">
+  <meta property="og:description" content="How many of your 90 days are used, how long you can stay, and when you can come back.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://octoosmo.github.io/presence-pages/schengen-calculator/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../schengen.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Schengen 90/180 Calculator",
+        "url": "https://octoosmo.github.io/presence-pages/schengen-calculator/",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How does the 90/180 rule work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "On any day you are in the Schengen area, look back over the 180 days ending that day. You may have spent at most 90 of them in the area. The window moves every day, so days come back one at a time as old ones fall out of it." } },
+          { "@type": "Question", "name": "Do the days of entry and exit count?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The day you arrive and the day you leave each count as a full day, even if you were there for an hour." } },
+          { "@type": "Question", "name": "Which countries share the 90 days?",
+            "acceptedAnswer": { "@type": "Answer", "text": "All 29 Schengen states share one allowance: Austria, Belgium, Bulgaria, Croatia, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, the Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden and Switzerland. Monaco, San Marino and the Vatican have no border with them, so days there count too. Cyprus and Ireland are not in Schengen." } },
+          { "@type": "Question", "name": "I have a residence permit in one Schengen country. Do I still count?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Days in the country that issued your residence permit or long-stay national visa do not count. In the other Schengen countries you are a short-stay visitor, and 90/180 applies there." } },
+          { "@type": "Question", "name": "Will a border officer actually know?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The EU Entry/Exit System records every entry and exit of non-EU travellers electronically, so an overstay is calculated automatically rather than read from passport stamps. An overstay can mean a fine, a record in the system and a ban on entry." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <main class="shell">
+    <nav aria-label="Primary navigation">
+      <a class="brand" href="../">Presence</a>
+      <div class="nav-links">
+        <a href="../ru/kalkulyator-shengena/" hreflang="ru" lang="ru">По-русски</a>
+        <a href="../pro/">Pro</a>
+        <a href="../support/">Support</a>
+      </div>
+    </nav>
+
+    <header>
+      <p class="eyebrow">Schengen calculator</p>
+      <h1>How many of your 90 days are left?</h1>
+      <p class="lede">Enter your trips to the Schengen area. The calculator shows how many days of the last 180 are used, how long you can stay, and when you can come back. It runs in your browser: nothing you type is sent anywhere.</p>
+    </header>
+
+    <section id="calculator" class="calc" aria-label="Calculator">
+      <article>
+        <h2>Your trips</h2>
+        <p class="meta">Every stay in the Schengen area, with the day you entered and the day you left. The order does not matter, and overlaps are counted once.</p>
+        <div class="trip-list" data-trips></div>
+        <button type="button" class="button-quiet" data-add>+ Add a trip</button>
+
+        <label class="check-date">
+          <span>Date to check</span>
+          <input type="date" data-check>
+          <small>Today, or the day you plan to enter.</small>
+        </label>
+      </article>
+
+      <article class="calc-result" aria-live="polite" data-result></article>
+    </section>
+
+    <section class="cta" aria-label="Presence for iPhone">
+      <article>
+        <h2>Your photos already know these dates</h2>
+        <p>Typing trips in from memory is where a count goes wrong. Presence, for iPhone and iPad, reads the dates and places your camera already saved and works out every day in every country — then keeps the 90/180 count up to date and tells you before the limit, not after. On your device, without an account.</p>
+        <a class="button" href="https://apps.apple.com/app/id6813907705">Get Presence on the App Store</a>
+        <div class="gallery app-shots">
+          <figure>
+            <img src="../shots/03-rules.png" width="570" height="1238" loading="lazy"
+                 alt="Presence's Rules screen: 23 of 90 Schengen days left, with the days used in the last 180 shown as a bar.">
+            <figcaption>The 90/180 count, kept up to date by itself.</figcaption>
+          </figure>
+          <figure>
+            <img src="../shots/01-timeline.png" width="570" height="1238" loading="lazy"
+                 alt="The timeline: the country you are in now, the Schengen days left, and every country by days spent.">
+            <figcaption>Every country you have been to, from your photos.</figcaption>
+          </figure>
+          <figure>
+            <img src="../shots/07-trips.png" width="570" height="1238" loading="lazy"
+                 alt="The same days grouped as trips, each with its dates and the countries it crossed.">
+            <figcaption>Your trips with their dates — nothing to type in.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <section aria-label="Questions">
+      <article>
+        <h2>How the 90/180 rule works</h2>
+        <p>On any day you are in the Schengen area, look back over the 180 days ending that day. You may have spent at most 90 of them in the area. The window moves every day, so days come back one at a time as old ones fall out of the back of it — there is no date on which the count resets.</p>
+
+        <h3>Do the days of entry and exit count?</h3>
+        <p>Yes. The day you arrive and the day you leave each count as a full day, even if you were there for an hour. A weekend from Friday to Sunday is three days.</p>
+
+        <h3>Which countries share the 90 days?</h3>
+        <p>All 29 Schengen states share one allowance: Austria, Belgium, Bulgaria, Croatia, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, the Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden and Switzerland. Monaco, San Marino and the Vatican have no border with them, so days there count too. Cyprus and Ireland are not in Schengen and have rules of their own.</p>
+
+        <h3>I have a residence permit in one Schengen country</h3>
+        <p>Days in the country that issued your residence permit or long-stay national visa do not count — leave them out of the trips above. In the other Schengen countries you are a short-stay visitor, and 90/180 applies there as it does to anyone.</p>
+
+        <h3>Will a border officer actually know?</h3>
+        <p>Yes. The EU Entry/Exit System records every entry and exit of non-EU travellers electronically, so an overstay is calculated by the system rather than read from passport stamps. An overstay can mean a fine, a record that follows you to every later visa application, and a ban on entry.</p>
+
+        <h3>What this calculator does not know</h3>
+        <p>Some nationalities have bilateral agreements with individual Schengen states that allow longer stays there, and a visa can carry its own shorter limit. When the answer matters, check it against the visa itself and the rules of the country you are going to. This page is a calculator, not legal advice.</p>
+      </article>
+    </section>
+
+    <footer><a href="../">Presence</a> · <a href="../privacy/">Privacy</a> · © 2026 Presence</footer>
+  </main>
+</body>
+</html>
