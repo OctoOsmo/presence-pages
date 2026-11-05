@@ -152,12 +152,13 @@ PAGES = [
             "lede": "Serbia's limit depends on your passport: thirty days from each entry for Russian citizens, ninety days in any 180 for most Western passports. Pick yours, enter your trips, and see the last day you can stay.",
             "presets": [
                 ("Russia: 30 days from each entry", {"perEntry": 30}),
+                ("Russia, counted strictly: 30 per entry and no more than 90 in any 180", {"perEntry": 30, "allowance": 90, "window": 180}),
                 ("EU, UK, US and most visa-free passports: 90 days in any 180", {"allowance": 90, "window": 180}),
             ],
             "table": [("Russia", "30 days from the day of entry"),
                       ("EU, Schengen states, UK, US and most other visa-free passports", "90 days in any 180")],
             "faq": [
-                ("Does leaving Serbia reset the 30 days?", "For Russian citizens the 30 days run from each entry, so a new entry starts a new count. Border officers can still refuse someone who seems to be living in Serbia on repeated short stays; a residence permit is the way to stay longer."),
+                ("Does leaving Serbia reset the 30 days?", "On paper, yes: for Russian citizens the 30 days run from each entry. In practice, in 2026 Serbian border and police officers have been reported to look at the total time spent in the country, and a court in Subotica treated repeated 30-day stays as one when they added up to more than 90 in 180. The strict preset counts that way. A residence permit is the safe way to stay longer."),
                 ("How does the 90-in-180 rule work in Serbia?", "Like Schengen's, but on its own: on any day in Serbia, the 180 days ending that day may hold at most 90 in Serbia. Days in the Schengen area do not count towards it."),
                 ("Do I need to register?", "Yes. Foreigners register their address with the police within 24 hours of arrival, the 'white card'; a hotel does it for its guests."),
                 ("What about tax?", "Serbia treats 183 days in any twelve months as a sign of tax residency. The 183-day calculator counts that."),
@@ -171,12 +172,13 @@ PAGES = [
             "lede": "Лимит в Сербии зависит от паспорта: гражданам России — 30 дней с каждого въезда, большинству западных паспортов — 90 дней за любые 180. Выберите свой, введите поездки и узнайте, до какого числа можно остаться.",
             "presets": [
                 ("Россия: 30 дней с каждого въезда", {"perEntry": 30}),
+                ("Россия, строго: 30 за въезд и не больше 90 за любые 180", {"perEntry": 30, "allowance": 90, "window": 180}),
                 ("ЕС, Великобритания, США и большинство безвизовых паспортов: 90 дней за любые 180", {"allowance": 90, "window": 180}),
             ],
             "table": [("Россия", "30 дней со дня въезда"),
                       ("ЕС, страны Шенгена, Великобритания, США и большинство других безвизовых паспортов", "90 дней за любые 180")],
             "faq": [
-                ("Обнуляет ли выезд 30 дней?", "Для граждан России 30 дней отсчитываются с каждого въезда, поэтому новый въезд начинает новый отсчёт. Но пограничник может отказать тому, кто фактически живёт в Сербии короткими заездами подряд; чтобы оставаться дольше, нужен ВНЖ."),
+                ("Обнуляет ли выезд 30 дней?", "По соглашению — да: для граждан России 30 дней отсчитываются с каждого въезда. Но в 2026 году сообщают, что сербские пограничники и полиция смотрят на общее время в стране, а суд в Суботице признал повторные заезды по 30 дней одним пребыванием, когда они сложились больше чем в 90 дней за 180. Вариант «строго» считает именно так. Чтобы оставаться дольше без риска, нужен ВНЖ (боравак)."),
                 ("Как работает 90 из 180 в Сербии?", "Как в Шенгене, но отдельно от него: в любой день в Сербии из 180 дней, заканчивающихся этим днём, в Сербии может быть не больше 90. Дни в Шенгене сюда не входят."),
                 ("Нужна ли регистрация?", "Да. Иностранец регистрирует адрес в полиции в течение 24 часов после приезда — «белый картон»; за гостей отеля это делает отель."),
                 ("А налоги?", "В Сербии признаком налогового резидентства считают 183 дня за любые 12 месяцев. Это считает калькулятор 183 дней."),
