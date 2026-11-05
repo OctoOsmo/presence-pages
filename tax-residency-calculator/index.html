@@ -1,0 +1,185 @@
+<!doctype html>
+<!-- Written by tools/build-pages.py; change it there. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>183-Day Tax Residency Calculator — days in a country this tax year</title>
+  <meta name="description" content="Free 183-day calculator: enter your trips to a country and see how many days you have spent there this tax year or in any 12 months, how many are left before 183, and the day you would reach it. Runs in your browser.">
+  <meta name="apple-itunes-app" content="app-id=6813907705">
+  <link rel="canonical" href="https://octoosmo.github.io/presence-pages/tax-residency-calculator/">
+  <link rel="alternate" hreflang="en" href="https://octoosmo.github.io/presence-pages/tax-residency-calculator/">
+  <link rel="alternate" hreflang="ru" href="https://octoosmo.github.io/presence-pages/ru/kalkulyator-183-dnej/">
+  <link rel="alternate" hreflang="x-default" href="https://octoosmo.github.io/presence-pages/tax-residency-calculator/">
+  <meta property="og:title" content="183-day calculator">
+  <meta property="og:description" content="Free 183-day calculator: enter your trips to a country and see how many days you have spent there this tax year or in any 12 months, how many are left before 183, and the day you would reach it. Runs in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://octoosmo.github.io/presence-pages/tax-residency-calculator/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../stay.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "183-day calculator",
+      "url": "https://octoosmo.github.io/presence-pages/tax-residency-calculator/",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "en",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the 183-day rule?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many countries treat someone who spends 183 days or more there in a tax year, or in a twelve-month period, as tax resident. It is a rule of thumb, not the whole test: ties such as a home, family, work and where your life is centred can make you resident with fewer days, and a treaty between two countries decides when both claim you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Calendar year or any twelve months?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the country. Some count the calendar year; others count any twelve consecutive months, so 183 days can be reached across New Year. Russia counts 183 days in twelve consecutive months, with the final status settled for the calendar year; Georgia counts any continuous twelve months that end in the tax year. The UK and Australia run their own tax years. Pick the period your country uses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do the days of arrival and departure count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Here, yes: every day you were in the country counts as a day, as most countries count them. Not all do — the UK counts the days you were there at midnight, and the US uses its own weighted three-year test — so check how your country counts before relying on a close number."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the number include trips I have not taken yet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a tax year, a trip you plan later in the same year counts towards it, so the calculator shows the whole year. For any twelve months, it counts the twelve months ending on the day you check."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <main class="shell">
+    <nav aria-label="Primary navigation">
+      <a class="brand" href="../">Presence</a>
+      <div class="nav-links">
+        <a href="../ru/kalkulyator-183-dnej/" hreflang="ru" lang="ru">По-русски</a>
+        <a href="../pro/">Pro</a>
+        <a href="../support/">Support</a>
+      </div>
+    </nav>
+
+    <header>
+      <p class="eyebrow">183-day calculator</p>
+      <h1>How close are you to 183 days?</h1>
+      <p class="lede">Enter your trips to one country. The calculator counts your days there over the tax year or over any twelve months in a row, says how far you are from the threshold, and on which day you would reach it if you stayed. It runs in your browser: nothing you type is sent anywhere.</p>
+    </header>
+
+    <section id="calculator" class="calc" data-mode="tax" data-store="tax" aria-label="183-day calculator">
+      <article>
+        <label class="rule-picker">
+          <span>Your passport or rule</span>
+          <select data-rule>
+            <option value="0" data-threshold="183" data-start="01-01">Calendar year, from 1 January</option>
+            <option value="1" data-threshold="183" data-start="">Any 12 months in a row</option>
+            <option value="2" data-threshold="183" data-start="04-06">Tax year from 6 April (United Kingdom)</option>
+            <option value="3" data-threshold="183" data-start="07-01">Tax year from 1 July (Australia)</option>
+            <option value="custom">My own: a threshold over any 12 months</option>
+          </select>
+        </label>
+        <div class="rule-custom" data-custom hidden>
+          <label><span>Threshold, days</span><input type="number" inputmode="numeric" min="1" max="366" name="threshold" value="183"></label>
+        </div>
+
+        <h2>Your trips</h2>
+        <p class="meta">Every stay in the country, with the day you entered and the day you left. Both count as days in the country.</p>
+        <div class="trip-list" data-trips></div>
+        <button type="button" class="button-quiet" data-add>+ Add a trip</button>
+
+        <label class="check-date">
+          <span>Date to check</span>
+          <input type="date" data-check>
+          <small>Today, or the day you plan to enter.</small>
+        </label>
+      </article>
+
+      <article class="calc-result" aria-live="polite" data-result></article>
+    </section>
+
+    <section class="cta" aria-label="Presence">
+      <article>
+        <h2>Your photos already know these dates</h2>
+        <p>Typing trips in from memory is where a count goes wrong. Presence, for iPhone and iPad, reads the dates and places your camera already saved and works out every day in every country — then keeps the count of each limit up to date, the visa on your own passport included, and tells you before it runs out. On your device, without an account.</p>
+        <a class="button" href="https://apps.apple.com/app/id6813907705">Get Presence on the App Store</a>
+        <div class="gallery app-shots">
+          <figure>
+            <img src="../shots/03-rules.png" width="570" height="1238" loading="lazy"
+                 alt="Presence&#x27;s Rules screen: each limit with the days used and left.">
+            <figcaption>Every limit counted by itself.</figcaption>
+          </figure>
+          <figure>
+            <img src="../shots/01-timeline.png" width="570" height="1238" loading="lazy"
+                 alt="The timeline: the country you are in now and every country by days spent.">
+            <figcaption>Every country you have been to, from your photos.</figcaption>
+          </figure>
+          <figure>
+            <img src="../shots/07-trips.png" width="570" height="1238" loading="lazy"
+                 alt="The same days grouped as trips, each with its dates and countries.">
+            <figcaption>Your trips with their dates — nothing to type in.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <section aria-label="FAQ">
+      <article>
+        <h3>What is the 183-day rule?</h3>
+        <p>Many countries treat someone who spends 183 days or more there in a tax year, or in a twelve-month period, as tax resident. It is a rule of thumb, not the whole test: ties such as a home, family, work and where your life is centred can make you resident with fewer days, and a treaty between two countries decides when both claim you.</p>
+
+        <h3>Calendar year or any twelve months?</h3>
+        <p>It depends on the country. Some count the calendar year; others count any twelve consecutive months, so 183 days can be reached across New Year. Russia counts 183 days in twelve consecutive months, with the final status settled for the calendar year; Georgia counts any continuous twelve months that end in the tax year. The UK and Australia run their own tax years. Pick the period your country uses.</p>
+
+        <h3>Do the days of arrival and departure count?</h3>
+        <p>Here, yes: every day you were in the country counts as a day, as most countries count them. Not all do — the UK counts the days you were there at midnight, and the US uses its own weighted three-year test — so check how your country counts before relying on a close number.</p>
+
+        <h3>Why does the number include trips I have not taken yet?</h3>
+        <p>For a tax year, a trip you plan later in the same year counts towards it, so the calculator shows the whole year. For any twelve months, it counts the twelve months ending on the day you check.</p>
+
+        <p class="meta">Rules as checked on 5 November 2026. They change — the country&#x27;s foreign ministry or embassy has the final word, and this page is a calculator, not legal advice.</p>
+      </article>
+    </section>
+
+    <section aria-label="Other calculators">
+      <article>
+        <h2>Other calculators</h2>
+        <ul class="related">
+          <li><a href="../schengen-calculator/">Schengen 90/180</a></li>
+          <li><a href="../georgia-stay-calculator/">Georgia stay calculator</a></li>
+          <li><a href="../serbia-stay-calculator/">Serbia stay calculator</a></li>
+          <li><a href="../turkey-stay-calculator/">Turkey stay calculator</a></li>
+          <li><a href="../montenegro-stay-calculator/">Montenegro stay calculator</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <footer><a href="../">Presence</a> · <a href="../privacy/">Privacy</a> · © 2026 Presence</footer>
+  </main>
+</body>
+</html>

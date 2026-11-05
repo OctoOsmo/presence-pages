@@ -1,0 +1,185 @@
+<!doctype html>
+<!-- Written by tools/build-pages.py; change it there. -->
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор 183 дней — налоговое резидентство</title>
+  <meta name="description" content="Бесплатный калькулятор 183 дней: введите поездки в страну и узнайте, сколько дней вы там провели за налоговый год или за любые 12 месяцев, сколько осталось до 183 и когда порог наберётся. Считает в браузере.">
+  <meta name="apple-itunes-app" content="app-id=6813907705">
+  <link rel="canonical" href="https://octoosmo.github.io/presence-pages/ru/kalkulyator-183-dnej/">
+  <link rel="alternate" hreflang="en" href="https://octoosmo.github.io/presence-pages/tax-residency-calculator/">
+  <link rel="alternate" hreflang="ru" href="https://octoosmo.github.io/presence-pages/ru/kalkulyator-183-dnej/">
+  <link rel="alternate" hreflang="x-default" href="https://octoosmo.github.io/presence-pages/tax-residency-calculator/">
+  <meta property="og:title" content="Калькулятор 183 дней">
+  <meta property="og:description" content="Бесплатный калькулятор 183 дней: введите поездки в страну и узнайте, сколько дней вы там провели за налоговый год или за любые 12 месяцев, сколько осталось до 183 и когда порог наберётся. Считает в браузере.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://octoosmo.github.io/presence-pages/ru/kalkulyator-183-dnej/">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../stay.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Калькулятор 183 дней",
+      "url": "https://octoosmo.github.io/presence-pages/ru/kalkulyator-183-dnej/",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "ru",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Что такое правило 183 дней?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Во многих странах налоговым резидентом считают того, кто провёл в стране 183 дня или больше за налоговый год или за 12 месяцев. Это ориентир, а не весь тест: жильё, семья, работа и центр жизненных интересов могут сделать вас резидентом и с меньшим числом дней, а когда на вас претендуют две страны, решает соглашение об избежании двойного налогообложения."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Календарный год или любые 12 месяцев?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Зависит от страны. Одни считают календарный год, другие — любые 12 месяцев подряд, и тогда 183 дня могут набраться через Новый год. В России считают 183 дня за 12 следующих подряд месяцев, а окончательный статус определяют по итогам календарного года. В Грузии и Сербии — 183 дня за любые 12 месяцев подряд. У Великобритании и Австралии свои налоговые годы. Выберите период, который использует ваша страна."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Считаются ли дни въезда и выезда?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Здесь — да: каждый день, когда вы были в стране, считается днём, как считает большинство стран. Но не все: Великобритания считает дни, когда вы были в стране в полночь, у США свой взвешенный тест за три года. Если число близко к порогу, проверьте, как считает ваша страна."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему в подсчёт попали поездки, которых ещё не было?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для налогового года поездка, запланированная на конец того же года, в него войдёт, поэтому калькулятор показывает весь год. Для любых 12 месяцев считаются 12 месяцев, заканчивающиеся датой проверки."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <main class="shell">
+    <nav aria-label="Навигация">
+      <a class="brand" href="../../">Presence</a>
+      <div class="nav-links">
+        <a href="../../tax-residency-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../pro/">Pro</a>
+        <a href="../../support/">Поддержка</a>
+      </div>
+    </nav>
+
+    <header>
+      <p class="eyebrow">Калькулятор 183 дней</p>
+      <h1>Сколько вам осталось до 183 дней?</h1>
+      <p class="lede">Введите поездки в одну страну. Калькулятор посчитает дни в ней за налоговый год или за любые 12 месяцев подряд, покажет, сколько осталось до порога, и в какой день он наберётся, если оставаться. Всё считается в браузере: введённое никуда не отправляется.</p>
+    </header>
+
+    <section id="calculator" class="calc" data-mode="tax" data-store="tax" aria-label="Калькулятор 183 дней">
+      <article>
+        <label class="rule-picker">
+          <span>Ваш паспорт или правило</span>
+          <select data-rule>
+            <option value="0" data-threshold="183" data-start="01-01">Календарный год, с 1 января</option>
+            <option value="1" data-threshold="183" data-start="">Любые 12 месяцев подряд</option>
+            <option value="2" data-threshold="183" data-start="04-06">Налоговый год с 6 апреля (Великобритания)</option>
+            <option value="3" data-threshold="183" data-start="07-01">Налоговый год с 1 июля (Австралия)</option>
+            <option value="custom">Своё: порог за любые 12 месяцев</option>
+          </select>
+        </label>
+        <div class="rule-custom" data-custom hidden>
+          <label><span>Порог, дней</span><input type="number" inputmode="numeric" min="1" max="366" name="threshold" value="183"></label>
+        </div>
+
+        <h2>Ваши поездки</h2>
+        <p class="meta">Каждое пребывание в стране: день въезда и день выезда. Оба считаются днями в стране.</p>
+        <div class="trip-list" data-trips></div>
+        <button type="button" class="button-quiet" data-add>+ Добавить поездку</button>
+
+        <label class="check-date">
+          <span>Дата проверки</span>
+          <input type="date" data-check>
+          <small>Сегодня или день, когда вы собираетесь въехать.</small>
+        </label>
+      </article>
+
+      <article class="calc-result" aria-live="polite" data-result></article>
+    </section>
+
+    <section class="cta" aria-label="Presence">
+      <article>
+        <h2>Эти даты уже есть в ваших фото</h2>
+        <p>Поездки, вбитые по памяти, — главная причина ошибок в подсчёте. Presence для iPhone и iPad читает даты и места, которые уже сохранила камера, и считает каждый день в каждой стране. Потом сам ведёт счёт по каждому лимиту — и по визе в вашем паспорте тоже — и предупреждает до того, как он закончится. Всё на устройстве, без аккаунта.</p>
+        <a class="button" href="https://apps.apple.com/app/id6813907705">Скачать Presence в App Store</a>
+        <div class="gallery app-shots">
+          <figure>
+            <img src="../../shots/ru/03-rules.png" width="570" height="1238" loading="lazy"
+                 alt="Экран «Правила» в Presence: каждый лимит с использованными и оставшимися днями.">
+            <figcaption>Каждый лимит считается сам.</figcaption>
+          </figure>
+          <figure>
+            <img src="../../shots/ru/01-timeline.png" width="570" height="1238" loading="lazy"
+                 alt="Таймлайн: страна, где вы сейчас, и все страны по числу дней.">
+            <figcaption>Все страны, где вы были, — по вашим фото.</figcaption>
+          </figure>
+          <figure>
+            <img src="../../shots/ru/07-trips.png" width="570" height="1238" loading="lazy"
+                 alt="Те же дни, сгруппированные в поездки: даты и страны каждой.">
+            <figcaption>Поездки с датами — ничего не нужно вводить.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <section aria-label="FAQ">
+      <article>
+        <h3>Что такое правило 183 дней?</h3>
+        <p>Во многих странах налоговым резидентом считают того, кто провёл в стране 183 дня или больше за налоговый год или за 12 месяцев. Это ориентир, а не весь тест: жильё, семья, работа и центр жизненных интересов могут сделать вас резидентом и с меньшим числом дней, а когда на вас претендуют две страны, решает соглашение об избежании двойного налогообложения.</p>
+
+        <h3>Календарный год или любые 12 месяцев?</h3>
+        <p>Зависит от страны. Одни считают календарный год, другие — любые 12 месяцев подряд, и тогда 183 дня могут набраться через Новый год. В России считают 183 дня за 12 следующих подряд месяцев, а окончательный статус определяют по итогам календарного года. В Грузии и Сербии — 183 дня за любые 12 месяцев подряд. У Великобритании и Австралии свои налоговые годы. Выберите период, который использует ваша страна.</p>
+
+        <h3>Считаются ли дни въезда и выезда?</h3>
+        <p>Здесь — да: каждый день, когда вы были в стране, считается днём, как считает большинство стран. Но не все: Великобритания считает дни, когда вы были в стране в полночь, у США свой взвешенный тест за три года. Если число близко к порогу, проверьте, как считает ваша страна.</p>
+
+        <h3>Почему в подсчёт попали поездки, которых ещё не было?</h3>
+        <p>Для налогового года поездка, запланированная на конец того же года, в него войдёт, поэтому калькулятор показывает весь год. Для любых 12 месяцев считаются 12 месяцев, заканчивающиеся датой проверки.</p>
+
+        <p class="meta">Правила проверены 5 ноября 2026. Они меняются: последнее слово за МИД или посольством страны, а эта страница — калькулятор, а не юридическая консультация.</p>
+      </article>
+    </section>
+
+    <section aria-label="Другие калькуляторы">
+      <article>
+        <h2>Другие калькуляторы</h2>
+        <ul class="related">
+          <li><a href="../../ru/kalkulyator-shengena/">Шенген 90/180</a></li>
+          <li><a href="../../ru/kalkulyator-dnej-gruziya/">Калькулятор дней в Грузии</a></li>
+          <li><a href="../../ru/kalkulyator-dnej-serbiya/">Калькулятор дней в Сербии</a></li>
+          <li><a href="../../ru/kalkulyator-dnej-turciya/">Калькулятор дней в Турции</a></li>
+          <li><a href="../../ru/kalkulyator-dnej-chernogoriya/">Калькулятор дней в Черногории</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <footer><a href="../../">Presence</a> · <a href="../../privacy/">Конфиденциальность</a> · © 2026 Presence</footer>
+  </main>
+</body>
+</html>

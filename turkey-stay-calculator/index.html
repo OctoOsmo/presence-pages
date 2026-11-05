@@ -1,0 +1,181 @@
+<!doctype html>
+<!-- Written by tools/build-pages.py; change it there. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turkey Visa-Free Stay Calculator — 90/180 and 60 days per entry</title>
+  <meta name="description" content="How long can you stay in Turkey without a visa? 90 days in any 180 for most visa-free passports, and for Russian citizens no more than 60 days per entry as well. Enter your trips and see the last day you can stay.">
+  <meta name="apple-itunes-app" content="app-id=6813907705">
+  <link rel="canonical" href="https://octoosmo.github.io/presence-pages/turkey-stay-calculator/">
+  <link rel="alternate" hreflang="en" href="https://octoosmo.github.io/presence-pages/turkey-stay-calculator/">
+  <link rel="alternate" hreflang="ru" href="https://octoosmo.github.io/presence-pages/ru/kalkulyator-dnej-turciya/">
+  <link rel="alternate" hreflang="x-default" href="https://octoosmo.github.io/presence-pages/turkey-stay-calculator/">
+  <meta property="og:title" content="Turkey stay calculator">
+  <meta property="og:description" content="How long can you stay in Turkey without a visa? 90 days in any 180 for most visa-free passports, and for Russian citizens no more than 60 days per entry as well. Enter your trips and see the last day you can stay.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://octoosmo.github.io/presence-pages/turkey-stay-calculator/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../stay.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Turkey stay calculator",
+      "url": "https://octoosmo.github.io/presence-pages/turkey-stay-calculator/",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "en",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does leaving Turkey reset the count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The 180 days look back from each day, so a short trip out does not give you a new 90. For Russian citizens a new entry does start a new 60, but within what the 90 in 180 still allows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An example?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Russian citizen spends 60 days in Turkey, leaves, and comes back ten days later. The 60 days are still in the last 180, so only 30 more are allowed — the calculator shows the exact last day."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I stay longer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With a residence permit, applied for in Turkey before your visa-free days run out."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <main class="shell">
+    <nav aria-label="Primary navigation">
+      <a class="brand" href="../">Presence</a>
+      <div class="nav-links">
+        <a href="../ru/kalkulyator-dnej-turciya/" hreflang="ru" lang="ru">По-русски</a>
+        <a href="../pro/">Pro</a>
+        <a href="../support/">Support</a>
+      </div>
+    </nav>
+
+    <header>
+      <p class="eyebrow">Turkey stay calculator</p>
+      <h1>How long can you stay in Turkey?</h1>
+      <p class="lede">Turkey counts 90 days in any 180 for most visa-free passports, and Russian citizens also may not stay more than 60 days on one entry. Pick your passport, enter your trips, and see the last day you can stay.</p>
+    </header>
+
+    <section id="calculator" class="calc" data-mode="stay" data-store="turkey" aria-label="Turkey stay calculator">
+      <article>
+        <label class="rule-picker">
+          <span>Your passport or rule</span>
+          <select data-rule>
+            <option value="0" data-per-entry="60" data-allowance="90" data-window="180">Russia: 60 days per entry, 90 in any 180</option>
+            <option value="1" data-allowance="90" data-window="180">Ukraine, EU, UK, US and most visa-free passports: 90 days in any 180</option>
+            <option value="custom">My own rule</option>
+          </select>
+        </label>
+        <div class="rule-custom" data-custom hidden>
+          <label><span>Days per entry</span><input type="number" inputmode="numeric" min="1" name="perEntry" placeholder="30"></label>
+          <label><span>Days allowed</span><input type="number" inputmode="numeric" min="1" name="allowance" placeholder="90"></label>
+          <label><span>In any … days</span><input type="number" inputmode="numeric" min="1" name="window" placeholder="180"></label>
+        </div>
+
+        <h2>Your trips</h2>
+        <p class="meta">Every stay in the country, with the day you entered and the day you left. Both count as days in the country.</p>
+        <div class="trip-list" data-trips></div>
+        <button type="button" class="button-quiet" data-add>+ Add a trip</button>
+
+        <label class="check-date">
+          <span>Date to check</span>
+          <input type="date" data-check>
+          <small>Today, or the day you plan to enter.</small>
+        </label>
+      </article>
+
+      <article class="calc-result" aria-live="polite" data-result></article>
+    </section>
+
+    <section class="cta" aria-label="Presence">
+      <article>
+        <h2>Your photos already know these dates</h2>
+        <p>Typing trips in from memory is where a count goes wrong. Presence, for iPhone and iPad, reads the dates and places your camera already saved and works out every day in every country — then keeps the count of each limit up to date, the visa on your own passport included, and tells you before it runs out. On your device, without an account.</p>
+        <a class="button" href="https://apps.apple.com/app/id6813907705">Get Presence on the App Store</a>
+        <div class="gallery app-shots">
+          <figure>
+            <img src="../shots/03-rules.png" width="570" height="1238" loading="lazy"
+                 alt="Presence&#x27;s Rules screen: each limit with the days used and left.">
+            <figcaption>Every limit counted by itself.</figcaption>
+          </figure>
+          <figure>
+            <img src="../shots/01-timeline.png" width="570" height="1238" loading="lazy"
+                 alt="The timeline: the country you are in now and every country by days spent.">
+            <figcaption>Every country you have been to, from your photos.</figcaption>
+          </figure>
+          <figure>
+            <img src="../shots/07-trips.png" width="570" height="1238" loading="lazy"
+                 alt="The same days grouped as trips, each with its dates and countries.">
+            <figcaption>Your trips with their dates — nothing to type in.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <section aria-label="FAQ">
+      <article>
+        <table class="rules-table">
+          <thead><tr><th>Passport</th><th>How long</th></tr></thead>
+          <tbody>
+            <tr><td>Russia</td><td>60 days per entry, and 90 days in any 180</td></tr>
+            <tr><td>Ukraine, EU, UK, US and most other visa-free passports</td><td>90 days in any 180</td></tr>
+          </tbody>
+        </table>
+        <h3>Does leaving Turkey reset the count?</h3>
+        <p>No. The 180 days look back from each day, so a short trip out does not give you a new 90. For Russian citizens a new entry does start a new 60, but within what the 90 in 180 still allows.</p>
+
+        <h3>An example?</h3>
+        <p>A Russian citizen spends 60 days in Turkey, leaves, and comes back ten days later. The 60 days are still in the last 180, so only 30 more are allowed — the calculator shows the exact last day.</p>
+
+        <h3>How do I stay longer?</h3>
+        <p>With a residence permit, applied for in Turkey before your visa-free days run out.</p>
+
+        <p class="meta">Rules as checked on 5 November 2026. They change — the country&#x27;s foreign ministry or embassy has the final word, and this page is a calculator, not legal advice.</p>
+      </article>
+    </section>
+
+    <section aria-label="Other calculators">
+      <article>
+        <h2>Other calculators</h2>
+        <ul class="related">
+          <li><a href="../schengen-calculator/">Schengen 90/180</a></li>
+          <li><a href="../tax-residency-calculator/">183-day calculator</a></li>
+          <li><a href="../georgia-stay-calculator/">Georgia stay calculator</a></li>
+          <li><a href="../serbia-stay-calculator/">Serbia stay calculator</a></li>
+          <li><a href="../montenegro-stay-calculator/">Montenegro stay calculator</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <footer><a href="../">Presence</a> · <a href="../privacy/">Privacy</a> · © 2026 Presence</footer>
+  </main>
+</body>
+</html>

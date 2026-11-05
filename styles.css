@@ -554,3 +554,112 @@ input[type="date"]::-webkit-date-and-time-value {
 .app-shots {
   margin: 30px 0 0;
 }
+
+/* The other calculators: a rule to pick, and for "my own" the numbers. */
+.rule-picker {
+  display: grid;
+  gap: 4px;
+  max-width: 420px;
+  margin: 0 0 22px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.rule-picker span,
+.rule-custom span {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.rule-picker select,
+.rule-custom input {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.rule-picker select {
+  padding-right: 36px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.rule-custom {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 520px;
+  margin: -8px 0 22px;
+}
+
+.rule-custom[hidden] {
+  display: none;
+}
+
+.rule-custom label {
+  display: grid;
+  gap: 4px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.rule-custom span {
+  font-size: 0.85rem;
+}
+
+.cell.ahead:not(.used) {
+  opacity: 0.45;
+}
+
+.rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 18px;
+  font-size: 0.95rem;
+}
+
+.rules-table th,
+.rules-table td {
+  padding: 9px 10px 9px 0;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.rules-table th {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.related li + li {
+  margin-top: 0;
+}
+
+@media (max-width: 720px) {
+  .rule-custom {
+    grid-template-columns: 1fr;
+  }
+}

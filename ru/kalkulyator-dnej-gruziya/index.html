@@ -1,0 +1,190 @@
+<!doctype html>
+<!-- Written by tools/build-pages.py; change it there. -->
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сколько можно находиться в Грузии без визы — калькулятор 365 дней</title>
+  <meta name="description" content="Сколько можно находиться в Грузии без визы? Введите поездки и узнайте, когда заканчиваются ваши 365 дней и сколько можно пробыть, если въехать в любую дату. Считает в браузере.">
+  <meta name="apple-itunes-app" content="app-id=6813907705">
+  <link rel="canonical" href="https://octoosmo.github.io/presence-pages/ru/kalkulyator-dnej-gruziya/">
+  <link rel="alternate" hreflang="en" href="https://octoosmo.github.io/presence-pages/georgia-stay-calculator/">
+  <link rel="alternate" hreflang="ru" href="https://octoosmo.github.io/presence-pages/ru/kalkulyator-dnej-gruziya/">
+  <link rel="alternate" hreflang="x-default" href="https://octoosmo.github.io/presence-pages/georgia-stay-calculator/">
+  <meta property="og:title" content="Калькулятор дней в Грузии">
+  <meta property="og:description" content="Сколько можно находиться в Грузии без визы? Введите поездки и узнайте, когда заканчиваются ваши 365 дней и сколько можно пробыть, если въехать в любую дату. Считает в браузере.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://octoosmo.github.io/presence-pages/ru/kalkulyator-dnej-gruziya/">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../stay.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Калькулятор дней в Грузии",
+      "url": "https://octoosmo.github.io/presence-pages/ru/kalkulyator-dnej-gruziya/",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "ru",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как Грузия считает год?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "365 дней отсчитываются с дня въезда. Если выехать и вернуться, отсчёт начинается заново — поэтому правило обычно описывают как год за въезд, а не дни в окне."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Не будет ли проблем с частыми визаранами?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Могут быть. Новый въезд — решение пограничника, и того, кто фактически живёт в Грузии на безвизе подряд, могут расспросить. Чтобы жить там долго, нужен ВНЖ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли работать на безвизе?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Безвизовое пребывание — не то же самое, что право на работу. Грузия ужесточает правила для работающих иностранцев, поэтому проверьте, что касается вас, прежде чем устраиваться."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "А налоги?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Налоговым резидентом Грузии становятся после 183 дней за любые 12 месяцев подряд, заканчивающиеся в налоговом году. Это считает калькулятор 183 дней."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <main class="shell">
+    <nav aria-label="Навигация">
+      <a class="brand" href="../../">Presence</a>
+      <div class="nav-links">
+        <a href="../../georgia-stay-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../pro/">Pro</a>
+        <a href="../../support/">Поддержка</a>
+      </div>
+    </nav>
+
+    <header>
+      <p class="eyebrow">Калькулятор дней в Грузии</p>
+      <h1>Сколько вы можете оставаться в Грузии?</h1>
+      <p class="lede">Граждане примерно 95 стран, включая Россию, могут находиться в Грузии без визы до года. Введите поездки — калькулятор покажет, сколько дней этого визита прошло и до какого числа можно остаться.</p>
+    </header>
+
+    <section id="calculator" class="calc" data-mode="stay" data-store="georgia" aria-label="Калькулятор дней в Грузии">
+      <article>
+        <label class="rule-picker">
+          <span>Ваш паспорт или правило</span>
+          <select data-rule>
+            <option value="0" data-per-entry="365">Большинство паспортов — Россия, Украина, Беларусь, Казахстан, ЕС, Великобритания, США: 365 дней за въезд</option>
+            <option value="custom">Своё правило</option>
+          </select>
+        </label>
+        <div class="rule-custom" data-custom hidden>
+          <label><span>Дней за въезд</span><input type="number" inputmode="numeric" min="1" name="perEntry" placeholder="30"></label>
+          <label><span>Дней можно</span><input type="number" inputmode="numeric" min="1" name="allowance" placeholder="90"></label>
+          <label><span>За любые … дней</span><input type="number" inputmode="numeric" min="1" name="window" placeholder="180"></label>
+        </div>
+
+        <h2>Ваши поездки</h2>
+        <p class="meta">Каждое пребывание в стране: день въезда и день выезда. Оба считаются днями в стране.</p>
+        <div class="trip-list" data-trips></div>
+        <button type="button" class="button-quiet" data-add>+ Добавить поездку</button>
+
+        <label class="check-date">
+          <span>Дата проверки</span>
+          <input type="date" data-check>
+          <small>Сегодня или день, когда вы собираетесь въехать.</small>
+        </label>
+      </article>
+
+      <article class="calc-result" aria-live="polite" data-result></article>
+    </section>
+
+    <section class="cta" aria-label="Presence">
+      <article>
+        <h2>Эти даты уже есть в ваших фото</h2>
+        <p>Поездки, вбитые по памяти, — главная причина ошибок в подсчёте. Presence для iPhone и iPad читает даты и места, которые уже сохранила камера, и считает каждый день в каждой стране. Потом сам ведёт счёт по каждому лимиту — и по визе в вашем паспорте тоже — и предупреждает до того, как он закончится. Всё на устройстве, без аккаунта.</p>
+        <a class="button" href="https://apps.apple.com/app/id6813907705">Скачать Presence в App Store</a>
+        <div class="gallery app-shots">
+          <figure>
+            <img src="../../shots/ru/03-rules.png" width="570" height="1238" loading="lazy"
+                 alt="Экран «Правила» в Presence: каждый лимит с использованными и оставшимися днями.">
+            <figcaption>Каждый лимит считается сам.</figcaption>
+          </figure>
+          <figure>
+            <img src="../../shots/ru/01-timeline.png" width="570" height="1238" loading="lazy"
+                 alt="Таймлайн: страна, где вы сейчас, и все страны по числу дней.">
+            <figcaption>Все страны, где вы были, — по вашим фото.</figcaption>
+          </figure>
+          <figure>
+            <img src="../../shots/ru/07-trips.png" width="570" height="1238" loading="lazy"
+                 alt="Те же дни, сгруппированные в поездки: даты и страны каждой.">
+            <figcaption>Поездки с датами — ничего не нужно вводить.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <section aria-label="FAQ">
+      <article>
+        <table class="rules-table">
+          <thead><tr><th>Паспорт</th><th>Сколько можно</th></tr></thead>
+          <tbody>
+            <tr><td>Россия, Украина, Беларусь, Казахстан, Армения, Азербайджан, ЕС, Великобритания, США, Канада, Израиль и другие</td><td>365 дней с каждого въезда</td></tr>
+          </tbody>
+        </table>
+        <h3>Как Грузия считает год?</h3>
+        <p>365 дней отсчитываются с дня въезда. Если выехать и вернуться, отсчёт начинается заново — поэтому правило обычно описывают как год за въезд, а не дни в окне.</p>
+
+        <h3>Не будет ли проблем с частыми визаранами?</h3>
+        <p>Могут быть. Новый въезд — решение пограничника, и того, кто фактически живёт в Грузии на безвизе подряд, могут расспросить. Чтобы жить там долго, нужен ВНЖ.</p>
+
+        <h3>Можно ли работать на безвизе?</h3>
+        <p>Безвизовое пребывание — не то же самое, что право на работу. Грузия ужесточает правила для работающих иностранцев, поэтому проверьте, что касается вас, прежде чем устраиваться.</p>
+
+        <h3>А налоги?</h3>
+        <p>Налоговым резидентом Грузии становятся после 183 дней за любые 12 месяцев подряд, заканчивающиеся в налоговом году. Это считает калькулятор 183 дней.</p>
+
+        <p class="meta">Правила проверены 5 ноября 2026. Они меняются: последнее слово за МИД или посольством страны, а эта страница — калькулятор, а не юридическая консультация.</p>
+      </article>
+    </section>
+
+    <section aria-label="Другие калькуляторы">
+      <article>
+        <h2>Другие калькуляторы</h2>
+        <ul class="related">
+          <li><a href="../../ru/kalkulyator-shengena/">Шенген 90/180</a></li>
+          <li><a href="../../ru/kalkulyator-183-dnej/">Калькулятор 183 дней</a></li>
+          <li><a href="../../ru/kalkulyator-dnej-serbiya/">Калькулятор дней в Сербии</a></li>
+          <li><a href="../../ru/kalkulyator-dnej-turciya/">Калькулятор дней в Турции</a></li>
+          <li><a href="../../ru/kalkulyator-dnej-chernogoriya/">Калькулятор дней в Черногории</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <footer><a href="../../">Presence</a> · <a href="../../privacy/">Конфиденциальность</a> · © 2026 Presence</footer>
+  </main>
+</body>
+</html>

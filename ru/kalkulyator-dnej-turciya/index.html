@@ -1,0 +1,181 @@
+<!doctype html>
+<!-- Written by tools/build-pages.py; change it there. -->
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сколько можно находиться в Турции без визы — калькулятор 60 и 90/180</title>
+  <meta name="description" content="Сколько можно быть в Турции без визы? Россиянам — не больше 60 дней за въезд и 90 дней за любые 180, большинству безвизовых паспортов — 90 за 180. Введите поездки и узнайте, до какого числа можно остаться.">
+  <meta name="apple-itunes-app" content="app-id=6813907705">
+  <link rel="canonical" href="https://octoosmo.github.io/presence-pages/ru/kalkulyator-dnej-turciya/">
+  <link rel="alternate" hreflang="en" href="https://octoosmo.github.io/presence-pages/turkey-stay-calculator/">
+  <link rel="alternate" hreflang="ru" href="https://octoosmo.github.io/presence-pages/ru/kalkulyator-dnej-turciya/">
+  <link rel="alternate" hreflang="x-default" href="https://octoosmo.github.io/presence-pages/turkey-stay-calculator/">
+  <meta property="og:title" content="Калькулятор дней в Турции">
+  <meta property="og:description" content="Сколько можно быть в Турции без визы? Россиянам — не больше 60 дней за въезд и 90 дней за любые 180, большинству безвизовых паспортов — 90 за 180. Введите поездки и узнайте, до какого числа можно остаться.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://octoosmo.github.io/presence-pages/ru/kalkulyator-dnej-turciya/">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../stay.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Калькулятор дней в Турции",
+      "url": "https://octoosmo.github.io/presence-pages/ru/kalkulyator-dnej-turciya/",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "ru",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Обнуляет ли выезд лимит?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. 180 дней отсчитываются назад от каждого дня, поэтому короткий выезд не даёт новых 90. Для граждан России новый въезд начинает новые 60 дней, но только в пределах того, что ещё оставляют 90 за 180."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Пример?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Гражданин России провёл в Турции 60 дней, выехал и вернулся через десять дней. Эти 60 дней ещё в последних 180, поэтому можно только 30 — калькулятор покажет точную последнюю дату."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как остаться дольше?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "С видом на жительство: подать на него нужно в Турции, пока безвизовые дни не закончились."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <main class="shell">
+    <nav aria-label="Навигация">
+      <a class="brand" href="../../">Presence</a>
+      <div class="nav-links">
+        <a href="../../turkey-stay-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../pro/">Pro</a>
+        <a href="../../support/">Поддержка</a>
+      </div>
+    </nav>
+
+    <header>
+      <p class="eyebrow">Калькулятор дней в Турции</p>
+      <h1>Сколько вы можете оставаться в Турции?</h1>
+      <p class="lede">Турция считает 90 дней за любые 180, а гражданам России вдобавок нельзя оставаться дольше 60 дней за один въезд. Выберите паспорт, введите поездки и узнайте, до какого числа можно остаться.</p>
+    </header>
+
+    <section id="calculator" class="calc" data-mode="stay" data-store="turkey" aria-label="Калькулятор дней в Турции">
+      <article>
+        <label class="rule-picker">
+          <span>Ваш паспорт или правило</span>
+          <select data-rule>
+            <option value="0" data-per-entry="60" data-allowance="90" data-window="180">Россия: 60 дней за въезд, 90 за любые 180</option>
+            <option value="1" data-allowance="90" data-window="180">Украина, ЕС, Великобритания, США и большинство безвизовых паспортов: 90 дней за любые 180</option>
+            <option value="custom">Своё правило</option>
+          </select>
+        </label>
+        <div class="rule-custom" data-custom hidden>
+          <label><span>Дней за въезд</span><input type="number" inputmode="numeric" min="1" name="perEntry" placeholder="30"></label>
+          <label><span>Дней можно</span><input type="number" inputmode="numeric" min="1" name="allowance" placeholder="90"></label>
+          <label><span>За любые … дней</span><input type="number" inputmode="numeric" min="1" name="window" placeholder="180"></label>
+        </div>
+
+        <h2>Ваши поездки</h2>
+        <p class="meta">Каждое пребывание в стране: день въезда и день выезда. Оба считаются днями в стране.</p>
+        <div class="trip-list" data-trips></div>
+        <button type="button" class="button-quiet" data-add>+ Добавить поездку</button>
+
+        <label class="check-date">
+          <span>Дата проверки</span>
+          <input type="date" data-check>
+          <small>Сегодня или день, когда вы собираетесь въехать.</small>
+        </label>
+      </article>
+
+      <article class="calc-result" aria-live="polite" data-result></article>
+    </section>
+
+    <section class="cta" aria-label="Presence">
+      <article>
+        <h2>Эти даты уже есть в ваших фото</h2>
+        <p>Поездки, вбитые по памяти, — главная причина ошибок в подсчёте. Presence для iPhone и iPad читает даты и места, которые уже сохранила камера, и считает каждый день в каждой стране. Потом сам ведёт счёт по каждому лимиту — и по визе в вашем паспорте тоже — и предупреждает до того, как он закончится. Всё на устройстве, без аккаунта.</p>
+        <a class="button" href="https://apps.apple.com/app/id6813907705">Скачать Presence в App Store</a>
+        <div class="gallery app-shots">
+          <figure>
+            <img src="../../shots/ru/03-rules.png" width="570" height="1238" loading="lazy"
+                 alt="Экран «Правила» в Presence: каждый лимит с использованными и оставшимися днями.">
+            <figcaption>Каждый лимит считается сам.</figcaption>
+          </figure>
+          <figure>
+            <img src="../../shots/ru/01-timeline.png" width="570" height="1238" loading="lazy"
+                 alt="Таймлайн: страна, где вы сейчас, и все страны по числу дней.">
+            <figcaption>Все страны, где вы были, — по вашим фото.</figcaption>
+          </figure>
+          <figure>
+            <img src="../../shots/ru/07-trips.png" width="570" height="1238" loading="lazy"
+                 alt="Те же дни, сгруппированные в поездки: даты и страны каждой.">
+            <figcaption>Поездки с датами — ничего не нужно вводить.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <section aria-label="FAQ">
+      <article>
+        <table class="rules-table">
+          <thead><tr><th>Паспорт</th><th>Сколько можно</th></tr></thead>
+          <tbody>
+            <tr><td>Россия</td><td>60 дней за въезд и 90 дней за любые 180</td></tr>
+            <tr><td>Украина, ЕС, Великобритания, США и большинство других безвизовых паспортов</td><td>90 дней за любые 180</td></tr>
+          </tbody>
+        </table>
+        <h3>Обнуляет ли выезд лимит?</h3>
+        <p>Нет. 180 дней отсчитываются назад от каждого дня, поэтому короткий выезд не даёт новых 90. Для граждан России новый въезд начинает новые 60 дней, но только в пределах того, что ещё оставляют 90 за 180.</p>
+
+        <h3>Пример?</h3>
+        <p>Гражданин России провёл в Турции 60 дней, выехал и вернулся через десять дней. Эти 60 дней ещё в последних 180, поэтому можно только 30 — калькулятор покажет точную последнюю дату.</p>
+
+        <h3>Как остаться дольше?</h3>
+        <p>С видом на жительство: подать на него нужно в Турции, пока безвизовые дни не закончились.</p>
+
+        <p class="meta">Правила проверены 5 ноября 2026. Они меняются: последнее слово за МИД или посольством страны, а эта страница — калькулятор, а не юридическая консультация.</p>
+      </article>
+    </section>
+
+    <section aria-label="Другие калькуляторы">
+      <article>
+        <h2>Другие калькуляторы</h2>
+        <ul class="related">
+          <li><a href="../../ru/kalkulyator-shengena/">Шенген 90/180</a></li>
+          <li><a href="../../ru/kalkulyator-183-dnej/">Калькулятор 183 дней</a></li>
+          <li><a href="../../ru/kalkulyator-dnej-gruziya/">Калькулятор дней в Грузии</a></li>
+          <li><a href="../../ru/kalkulyator-dnej-serbiya/">Калькулятор дней в Сербии</a></li>
+          <li><a href="../../ru/kalkulyator-dnej-chernogoriya/">Калькулятор дней в Черногории</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <footer><a href="../../">Presence</a> · <a href="../../privacy/">Конфиденциальность</a> · © 2026 Presence</footer>
+  </main>
+</body>
+</html>

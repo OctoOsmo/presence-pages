@@ -1,0 +1,192 @@
+<!doctype html>
+<!-- Written by tools/build-pages.py; change it there. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serbia Visa-Free Stay Calculator — 30 days for Russians, 90/180 for others</title>
+  <meta name="description" content="How long can you stay in Serbia without a visa? 30 days from entry for Russian citizens, 90 days in any 180 for EU, UK and US passports. Enter your trips and see the last day you can stay.">
+  <meta name="apple-itunes-app" content="app-id=6813907705">
+  <link rel="canonical" href="https://octoosmo.github.io/presence-pages/serbia-stay-calculator/">
+  <link rel="alternate" hreflang="en" href="https://octoosmo.github.io/presence-pages/serbia-stay-calculator/">
+  <link rel="alternate" hreflang="ru" href="https://octoosmo.github.io/presence-pages/ru/kalkulyator-dnej-serbiya/">
+  <link rel="alternate" hreflang="x-default" href="https://octoosmo.github.io/presence-pages/serbia-stay-calculator/">
+  <meta property="og:title" content="Serbia stay calculator">
+  <meta property="og:description" content="How long can you stay in Serbia without a visa? 30 days from entry for Russian citizens, 90 days in any 180 for EU, UK and US passports. Enter your trips and see the last day you can stay.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://octoosmo.github.io/presence-pages/serbia-stay-calculator/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../stay.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Serbia stay calculator",
+      "url": "https://octoosmo.github.io/presence-pages/serbia-stay-calculator/",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "en",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does leaving Serbia reset the 30 days?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For Russian citizens the 30 days run from each entry, so a new entry starts a new count. Border officers can still refuse someone who seems to be living in Serbia on repeated short stays; a residence permit is the way to stay longer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the 90-in-180 rule work in Serbia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Like Schengen's, but on its own: on any day in Serbia, the 180 days ending that day may hold at most 90 in Serbia. Days in the Schengen area do not count towards it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to register?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Foreigners register their address with the police within 24 hours of arrival, the 'white card'; a hotel does it for its guests."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Serbia treats 183 days in any twelve months as a sign of tax residency. The 183-day calculator counts that."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <main class="shell">
+    <nav aria-label="Primary navigation">
+      <a class="brand" href="../">Presence</a>
+      <div class="nav-links">
+        <a href="../ru/kalkulyator-dnej-serbiya/" hreflang="ru" lang="ru">По-русски</a>
+        <a href="../pro/">Pro</a>
+        <a href="../support/">Support</a>
+      </div>
+    </nav>
+
+    <header>
+      <p class="eyebrow">Serbia stay calculator</p>
+      <h1>How long can you stay in Serbia?</h1>
+      <p class="lede">Serbia&#x27;s limit depends on your passport: thirty days from each entry for Russian citizens, ninety days in any 180 for most Western passports. Pick yours, enter your trips, and see the last day you can stay.</p>
+    </header>
+
+    <section id="calculator" class="calc" data-mode="stay" data-store="serbia" aria-label="Serbia stay calculator">
+      <article>
+        <label class="rule-picker">
+          <span>Your passport or rule</span>
+          <select data-rule>
+            <option value="0" data-per-entry="30">Russia: 30 days from each entry</option>
+            <option value="1" data-allowance="90" data-window="180">EU, UK, US and most visa-free passports: 90 days in any 180</option>
+            <option value="custom">My own rule</option>
+          </select>
+        </label>
+        <div class="rule-custom" data-custom hidden>
+          <label><span>Days per entry</span><input type="number" inputmode="numeric" min="1" name="perEntry" placeholder="30"></label>
+          <label><span>Days allowed</span><input type="number" inputmode="numeric" min="1" name="allowance" placeholder="90"></label>
+          <label><span>In any … days</span><input type="number" inputmode="numeric" min="1" name="window" placeholder="180"></label>
+        </div>
+
+        <h2>Your trips</h2>
+        <p class="meta">Every stay in the country, with the day you entered and the day you left. Both count as days in the country.</p>
+        <div class="trip-list" data-trips></div>
+        <button type="button" class="button-quiet" data-add>+ Add a trip</button>
+
+        <label class="check-date">
+          <span>Date to check</span>
+          <input type="date" data-check>
+          <small>Today, or the day you plan to enter.</small>
+        </label>
+      </article>
+
+      <article class="calc-result" aria-live="polite" data-result></article>
+    </section>
+
+    <section class="cta" aria-label="Presence">
+      <article>
+        <h2>Your photos already know these dates</h2>
+        <p>Typing trips in from memory is where a count goes wrong. Presence, for iPhone and iPad, reads the dates and places your camera already saved and works out every day in every country — then keeps the count of each limit up to date, the visa on your own passport included, and tells you before it runs out. On your device, without an account.</p>
+        <a class="button" href="https://apps.apple.com/app/id6813907705">Get Presence on the App Store</a>
+        <div class="gallery app-shots">
+          <figure>
+            <img src="../shots/03-rules.png" width="570" height="1238" loading="lazy"
+                 alt="Presence&#x27;s Rules screen: each limit with the days used and left.">
+            <figcaption>Every limit counted by itself.</figcaption>
+          </figure>
+          <figure>
+            <img src="../shots/01-timeline.png" width="570" height="1238" loading="lazy"
+                 alt="The timeline: the country you are in now and every country by days spent.">
+            <figcaption>Every country you have been to, from your photos.</figcaption>
+          </figure>
+          <figure>
+            <img src="../shots/07-trips.png" width="570" height="1238" loading="lazy"
+                 alt="The same days grouped as trips, each with its dates and countries.">
+            <figcaption>Your trips with their dates — nothing to type in.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <section aria-label="FAQ">
+      <article>
+        <table class="rules-table">
+          <thead><tr><th>Passport</th><th>How long</th></tr></thead>
+          <tbody>
+            <tr><td>Russia</td><td>30 days from the day of entry</td></tr>
+            <tr><td>EU, Schengen states, UK, US and most other visa-free passports</td><td>90 days in any 180</td></tr>
+          </tbody>
+        </table>
+        <h3>Does leaving Serbia reset the 30 days?</h3>
+        <p>For Russian citizens the 30 days run from each entry, so a new entry starts a new count. Border officers can still refuse someone who seems to be living in Serbia on repeated short stays; a residence permit is the way to stay longer.</p>
+
+        <h3>How does the 90-in-180 rule work in Serbia?</h3>
+        <p>Like Schengen&#x27;s, but on its own: on any day in Serbia, the 180 days ending that day may hold at most 90 in Serbia. Days in the Schengen area do not count towards it.</p>
+
+        <h3>Do I need to register?</h3>
+        <p>Yes. Foreigners register their address with the police within 24 hours of arrival, the &#x27;white card&#x27;; a hotel does it for its guests.</p>
+
+        <h3>What about tax?</h3>
+        <p>Serbia treats 183 days in any twelve months as a sign of tax residency. The 183-day calculator counts that.</p>
+
+        <p class="meta">Rules as checked on 5 November 2026. They change — the country&#x27;s foreign ministry or embassy has the final word, and this page is a calculator, not legal advice.</p>
+      </article>
+    </section>
+
+    <section aria-label="Other calculators">
+      <article>
+        <h2>Other calculators</h2>
+        <ul class="related">
+          <li><a href="../schengen-calculator/">Schengen 90/180</a></li>
+          <li><a href="../tax-residency-calculator/">183-day calculator</a></li>
+          <li><a href="../georgia-stay-calculator/">Georgia stay calculator</a></li>
+          <li><a href="../turkey-stay-calculator/">Turkey stay calculator</a></li>
+          <li><a href="../montenegro-stay-calculator/">Montenegro stay calculator</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <footer><a href="../">Presence</a> · <a href="../privacy/">Privacy</a> · © 2026 Presence</footer>
+  </main>
+</body>
+</html>
